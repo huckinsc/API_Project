@@ -57,21 +57,26 @@ function displayMovies(data) {
     let newCard = document.createElement("div");
     newCard.setAttribute("class", "card");
     newCard.setAttribute("style", "width: 18rem;");
+
     let img = document.createElement("img");
     img.setAttribute("src", arr[i].Poster);
     img.setAttribute("class", "card-img-top");
     newCard.appendChild(img);
+
     let cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");
     newCard.appendChild(cardBody);
+
     let title = document.createElement("h5");
     title.setAttribute("class", "card-title");
     title.innerHTML = arr[i].Title;
     cardBody.appendChild(title);
+
     let para = document.createElement("p");
     para.setAttribute("class", "card-text");
     para.innerHTML = arr[i].Type + " " + arr[i].Year;
     cardBody.appendChild(para);
+
     document.getElementById("emp-containter").appendChild(newCard);
   }
 }
@@ -85,26 +90,12 @@ function displayGifs(data) {
     let newCard = document.createElement("div");
     newCard.setAttribute("class", "card");
     newCard.setAttribute("style", "width: 18rem;");
-    let img = document.createElement("img");
-    img.setAttribute("src", arr[i].images.preview_gif.url);
-    img.setAttribute("class", "card-img-top");
-    newCard.appendChild(img);
-
-    let cardBody = document.createElement("div");
-    cardBody.setAttribute("class", "card-body");
-    newCard.appendChild(cardBody);
-
-    let title = document.createElement("h5");
-    title.setAttribute("class", "card-title");
-    title.innerHTML = arr[i].title;
-    cardBody.appendChild(title);
-
-    let anchor = document.createElement("a");
-    anchor.setAttribute("href", arr[i].url);
-    anchor.setAttribute("class", "btn btn-primary");
-    anchor.setAttribute("target", "_blank");
-    anchor.innerHTML = "Get it";
-    cardBody.appendChild(anchor);
+    newCard.innerHTML = `<img src="${arr[i].images.preview_gif.url}" class="card-img-top" alt="gif">
+  <div class="card-body">
+    <h5 class="card-title">${arr[i].title}</h5>
+    
+    <a href="${arr[i].url}" class="btn btn-primary" target="_blank">Get it</a>
+  </div>`;
     document.getElementById("emp-containter").appendChild(newCard);
   }
 }
