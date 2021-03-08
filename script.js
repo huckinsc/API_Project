@@ -13,7 +13,7 @@ function myFunc() {
 function getMovies() {
   //console.log("In getMovies!");
   let omdbKey = "&apikey=de0af9ac";
-  let omdbStringStart = "http://www.omdbapi.com/?s=";
+  let omdbStringStart = "https://www.omdbapi.com/?s=";
   let inputText = document.getElementById("input").value;
   //console.log(inputText);
   let URL = omdbStringStart + inputText + omdbKey;
