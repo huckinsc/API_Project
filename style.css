@@ -1,0 +1,21 @@
+.result-Container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.inputArea {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+#input,
+#submit,
+#moviesRadio,
+#gifRadio,
+#reset {
+  margin-left: 10px;
+  margin-right: 10px;
+}
